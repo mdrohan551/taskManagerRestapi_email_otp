@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "093903f0-773d-456e-8150-ac9d2306a771",
+		"name": "Task Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9518923"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"email\":\"engr.rabbil@yahoo.com\",\r\n    \"firstName\":\"Rabbil\",\r\n    \"lastName\":\"Hasan\",\r\n    \"mobile\":\"01785388919\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/registration",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"engr.rabbil@yahoo.com\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/login",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profileDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseURL}}/profileDetails",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"profileDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profileUpdate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Salif\",\r\n    \"lastName\":\"Hasan\",\r\n    \"mobile\":\"01785388919\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/profileUpdate",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"profileUpdate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyOTP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/verifyOTP/engr.rabbil@yahoo.com/243067",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"verifyOTP",
+						"engr.rabbil@yahoo.com",
+						"243067"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "passwordReset",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/passwordReset/engr.rabbil@yahoo.com/243067/abc123",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"passwordReset",
+						"engr.rabbil@yahoo.com",
+						"243067",
+						"abc123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"My Task\",\r\n    \"description\":\"My Task\",\r\n    \"status\":\"New\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/task/create",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"task",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"My Task\",\r\n    \"description\":\"My Task\",\r\n    \"status\":\"Complete\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/task/update/65e614b390421f8d93420aea",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"task",
+						"update",
+						"65e614b390421f8d93420aea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"My Task\",\r\n    \"description\":\"My Task\",\r\n    \"status\":\"New\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/task/delete/65e61640d0b56050ec12db04",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"task",
+						"delete",
+						"65e61640d0b56050ec12db04"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseURL}}/task/read",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"task",
+						"read"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseURL",
+			"value": "http://localhost:5090/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk2NjE5OTksImRhdGEiOiJlbmdyLnJhYmJpbEB5YWhvby5jb20iLCJpYXQiOjE3MDk1NzU1OTl9.vLohfM6axKBospVNXMH-Qy6Yvq0BEIs7VdUo4iA6CBE",
+			"type": "string"
+		}
+	]
+}

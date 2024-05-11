@@ -1,0 +1,19 @@
+1. File Folder Creation
+2. Package Install : cors origion enable ar jonno .npm i cors
+                    npm express
+                    npm jsonwebtoken
+                    npm mongoose
+                    npm nodemailer
+                    npm nodemon
+                    npm express-rate-limit
+                    npm hpp
+                    npm helmet
+ 3. app.js config----------------------------
+     basic lib import
+
+4.run the  server
+5.user model DB creation
+6.task model DB creation
+7.otp model DB creation
+8.Email Utility
+9.user Registration
